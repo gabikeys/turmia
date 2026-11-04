@@ -100,4 +100,4 @@ Um plano gratuito com cota mensal, um trial de 14 dias e a contagem de uso feita
 
 ---
 
-**Gabriel Pereira** · [LinkedIn](https://www.linkedin.com/in/gabriel-pereira-556a03208/) · gabiteclas@gmail.com · [outros projetos](https://github.com/gabikeys)
+**Gabriel Pereira** · [LinkedIn](https://www.linkedin.com/in/gabriel-magalhaes-pereira/) · gabiteclas@gmail.com · [outros projetos](https://github.com/gabikeys)

@@ -71,7 +71,7 @@ flowchart LR
 ## Desafios técnicos
 
 ### 1. A IA inventava dados: RAG medido com evals
-**BNCC.** O plano de aula precisa citar os códigos de habilidade da BNCC (por exemplo, EF09MA13). Antes de mexer, criei uma **eval automatizada** e medi o problema: só **33%** dos planos citavam os códigos certos, e 9,7% dos códigos eram inventados. Implementei **RAG**: indexei as 1.487 habilidades com embeddings no **pgvector** e fiz uma busca híbrida, com filtro exato de série e disciplina e depois similaridade. Por fim, um **validador** só deixa passar códigos da lista recuperada. Nos mesmos casos, o acerto foi de **33% para 100%**, e a busca põe o código esperado em 1º lugar em 96,7% das vezes.
+**BNCC.** O plano de aula precisa citar os códigos de habilidade da BNCC (por exemplo, EF09MA13). Antes de mexer, criei uma **eval automatizada com 30 casos** e medi o problema: só **47%** dos planos citavam os códigos certos, e 9,7% dos códigos eram inventados. Implementei **RAG**: indexei as 1.487 habilidades com embeddings no **pgvector** e fiz uma busca híbrida, com filtro exato de série e disciplina e depois similaridade. Por fim, um **validador** só deixa passar códigos da lista recuperada. Nos mesmos 30 casos, o acerto foi de **47% para 100%**, sem nenhum código inventado, e a busca põe o código esperado em 1º lugar em 96,7% das vezes.
 
 **Banco de questões.** A busca antiga casava palavras soltas (`ilike`) e completava com **sorteio** da disciplina sem avisar o professor: 24,7% das questões entregues eram sorteadas. Estendi o RAG às **3.940 questões** de vestibular (indexação idempotente por hash, respeitando a cota diária da API). Segundo um **LLM-juiz**, nos mesmos temas as questões do tema foram de **48% para 70%**, e o sorteio caiu pra **0%**. Os temas que ainda vão mal estão documentados, com a hipótese e o próximo passo.
 
@@ -101,7 +101,7 @@ Um plano gratuito com cota mensal, um trial de 14 dias e a contagem de uso feita
 
 - **Em produção** em [turmia.com.br](https://turmia.com.br), com domínio próprio e cobrança recorrente (Asaas)
 - **Piloto na escola onde dou aula**, em Santo Amaro/BA, com a identidade visual da escola nos materiais
-- **RAG medido com evals:** códigos BNCC corretos de 33% → 100%; questões do tema de 48% → 70%, sem nenhuma sorteada
+- **RAG medido com evals:** códigos BNCC corretos de 47% → 100% (30 casos); questões do tema de 48% → 70%, sem nenhuma sorteada
 - Projeto feito do zero por uma pessoa só: produto, código, deploy e as primeiras vendas
 
 ## Stack
